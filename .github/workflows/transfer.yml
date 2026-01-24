@@ -44,6 +44,6 @@ jobs:
             --multi-thread-cutoff=64M \
             --retries=30 \
             --low-level-retries=100 \
+            --progress \
             --stats=1m \
-            --stats-one-line \
-            --progress
+            --stats-one-line
