@@ -35,15 +35,8 @@ jobs:
           rclone copy \
             zy:/ \
             z1:/ \
-            --transfers=4 \
-            --checkers=8 \
-            --tpslimit=10 \
-            --drive-chunk-size=64M \
-            --buffer-size=128M \
-            --multi-thread-streams=4 \
-            --multi-thread-cutoff=64M \
-            --retries=30 \
-            --low-level-retries=100 \
             --progress \
-            --stats=1m \
-            --stats-one-line
+            --transfers=4 \
+            --tpslimit=10 \
+            --retries=20 \
+            --low-level-retries=100
