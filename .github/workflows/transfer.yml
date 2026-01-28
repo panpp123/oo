@@ -1,10 +1,7 @@
-name: OneDrive to OneDrive (Resume Safe)
+name: OneDrive Transfer
 
 on:
   workflow_dispatch:
-  schedule:
-    
-    - cron: '0 */6 * * *'
 
 jobs:
   transfer:
@@ -15,8 +12,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Install rclone
-        run: |
-          curl https://rclone.org/install.sh | sudo bash
+        run: curl https://rclone.org/install.sh | sudo bash
 
       - name: Setup rclone config
         run: |
@@ -25,15 +21,9 @@ jobs:
           ${{ secrets.RCLONE_CONF }}
           EOF
 
-      - name: Check remotes
-        run: |
-          rclone listremotes
-
       - name: OneDrive to OneDrive
         run: |
-          rclone copy \
-            zy:/ \
-            z1:/ \
+          rclone copy zy:/ z1:/ \
             --progress \
             --transfers=4 \
             --stats=30s \
