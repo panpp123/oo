@@ -37,4 +37,5 @@ jobs:
             z1:/ \
             --progress \
             --transfers=4 \
+            --stats=30s \
             --low-level-retries=100
