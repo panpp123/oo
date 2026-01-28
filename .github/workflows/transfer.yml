@@ -3,8 +3,7 @@ name: OneDrive to OneDrive (Resume Safe)
 on:
   workflow_dispatch:
   schedule:
-    # 北京时间：03 / 09 / 15 / 21
-    # UTC：19 / 01 / 07 / 13
+    
     - cron: '0 */6 * * *'
 
 jobs:
