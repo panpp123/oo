@@ -23,7 +23,7 @@ jobs:
 
       - name: OneDrive to OneDrive
         run: |
-          rclone copy zy:/ z1:/ \
+          rclone copy nd4:/ n4:/ \
             --progress \
             --transfers=4 \
             --stats=30s
